@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqa7e4aoiane"]
+
+[ext_resource type="Script" path="res://Entities/Obstacle/obstacle_spawner_script.gd" id="1_k15ff"]
+[ext_resource type="AudioStream" uid="uid://dyw8pixelso1x" path="res://Assets/audio/point.wav" id="2_8553k"]
+
+[node name="ObstacleSpawner" type="Node2D"]
+script = ExtResource("1_k15ff")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="ScoreAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_8553k")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
